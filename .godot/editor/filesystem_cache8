@@ -1,0 +1,11 @@
+2a60927148abd1d33b818b535e306557
+::res://::1681850621
+changescene.gd::GDScript::-1::1681850623::0::1::::<>Button<>::
+hudshader.tscn::PackedScene::8724784073715227401::1681850629::0::1::::<><>::res://changescene.gd<>res://hudshader_big.gdshader<>res://mouseget.gd
+hudshader_big.gdshader::Shader::-1::1681850607::0::1::::<><>::
+icon.svg::CompressedTexture2D::8161755154878040248::1681805173::1681805178::1::::<><>::
+main.tscn::PackedScene::5433644836378560003::1681850636::0::1::::<><>::res://sandshader_small.gdshader<>res://mouseget.gd<>res://changescene.gd
+mouseget.gd::GDScript::-1::1681847849::0::1::::<>ColorRect<>::
+sandshader.tscn::PackedScene::7299217058222182566::1681850056::0::1::::<><>::res://sandshader_big.gdshader<>res://changescene.gd<>res://mouseget.gd
+sandshader_big.gdshader::Shader::-1::1681850607::0::1::::<><>::
+sandshader_small.gdshader::Shader::-1::1681850607::0::1::::<><>::

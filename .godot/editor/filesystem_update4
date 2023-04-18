@@ -1,0 +1,9 @@
+res://hudshader.tscn
+res://changescene.gd
+res://main.tscn
+res://hudshader_small.gdshader
+res://sandshader_small.gdshader
+res://sandshader.tscn
+res://mouseget.gd
+res://sandshader_big.gdshader
+res://hudshader_big.gdshader

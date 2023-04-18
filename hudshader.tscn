@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwkl6il4wltmn"]
+
+[ext_resource type="Script" path="res://changescene.gd" id="1_mr3wh"]
+[ext_resource type="Shader" path="res://hudshader_big.gdshader" id="2_pyp4x"]
+[ext_resource type="Script" path="res://mouseget.gd" id="3_fdfre"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xt3kv"]
+bg_color = Color(0.564706, 0.0588235, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_04guw"]
+shader = ExtResource("2_pyp4x")
+
+[node name="sandshader" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="labelbg" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 40.0
+color = Color(0.462745, 0.462745, 0.462745, 1)
+
+[node name="Label" type="Label" parent="labelbg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.141176, 0.141176, 0.141176, 1)
+theme_override_font_sizes/font_size = 28
+text = "Hud shader"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="Button" parent="labelbg"]
+layout_mode = 0
+offset_left = 1118.0
+offset_top = 7.0
+offset_right = 1145.0
+offset_bottom = 33.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xt3kv")
+script = ExtResource("1_mr3wh")
+scene = "res://main.tscn"
+
+[node name="shaderwindow" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_04guw")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -608.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+script = ExtResource("3_fdfre")
+
+[connection signal="pressed" from="labelbg/ColorRect" to="labelbg/ColorRect" method="_on_pressed"]

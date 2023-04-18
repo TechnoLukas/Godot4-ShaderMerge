@@ -1,0 +1,248 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjodlpdk7e60v"]
+
+[ext_resource type="Shader" path="res://sandshader_small.gdshader" id="1_bguxm"]
+[ext_resource type="Script" path="res://mouseget.gd" id="2_xefkr"]
+[ext_resource type="Script" path="res://changescene.gd" id="3_3jxwh"]
+[ext_resource type="Shader" path="res://hudshader_small.gdshader" id="4_c3c4x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_15o6v"]
+shader = ExtResource("1_bguxm")
+shader_parameter/iMouse = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw3mi"]
+bg_color = Color(0.407843, 0.407843, 0.407843, 0.368627)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikaxc"]
+bg_color = Color(0.717647, 0.717647, 0.717647, 0.478431)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_koo3e"]
+shader = ExtResource("4_c3c4x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5isj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.211765, 0.211765, 0.211765, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="shader1" type="ColorRect" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="arrowP1" type="ColorRect" parent="HBoxContainer/VBoxContainer/shader1"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 2.0
+offset_top = 40.0
+offset_right = 313.0
+offset_bottom = 60.0
+grow_horizontal = 2
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="arrowP2" type="ColorRect" parent="HBoxContainer/VBoxContainer/shader1"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 809.0
+offset_top = 57.0
+offset_right = 313.0
+offset_bottom = 528.0
+grow_horizontal = 2
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="labelbg" type="ColorRect" parent="HBoxContainer/VBoxContainer/shader1"]
+layout_mode = 2
+offset_right = 516.0
+offset_bottom = 40.0
+grow_horizontal = 2
+color = Color(0.462745, 0.462745, 0.462745, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/shader1/labelbg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.141176, 0.141176, 0.141176, 1)
+theme_override_font_sizes/font_size = 28
+text = "Sand shader"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shaderwindow" type="ColorRect" parent="HBoxContainer/VBoxContainer/shader1"]
+material = SubResource("ShaderMaterial_15o6v")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_xefkr")
+sesetivity = 2.5
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/shader1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_rw3mi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ikaxc")
+script = ExtResource("3_3jxwh")
+scene = "res://sandshader.tscn"
+
+[node name="shader2" type="ColorRect" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="arrowP1" type="ColorRect" parent="HBoxContainer/VBoxContainer/shader2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 296.0
+offset_top = 204.0
+offset_right = 297.0
+offset_bottom = 224.0
+grow_horizontal = 2
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="labelbg" type="ColorRect" parent="HBoxContainer/VBoxContainer/shader2"]
+layout_mode = 2
+offset_right = 516.0
+offset_bottom = 40.0
+grow_horizontal = 2
+color = Color(0.462745, 0.462745, 0.462745, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/shader2/labelbg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.141176, 0.141176, 0.141176, 1)
+theme_override_font_sizes/font_size = 28
+text = "Aim shader"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shaderwindow" type="ColorRect" parent="HBoxContainer/VBoxContainer/shader2"]
+material = SubResource("ShaderMaterial_koo3e")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/shader2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_rw3mi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ikaxc")
+script = ExtResource("3_3jxwh")
+scene = "res://hudshader.tscn"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 567
+
+[node name="shaderM" type="ColorRect" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 264)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.54902, 0.54902, 0.54902, 1)
+
+[node name="labelbg" type="ColorRect" parent="HBoxContainer/VBoxContainer2/shaderM"]
+layout_mode = 0
+offset_right = 516.0
+offset_bottom = 40.0
+grow_horizontal = 2
+color = Color(0.462745, 0.462745, 0.462745, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/shaderM/labelbg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.141176, 0.141176, 0.141176, 1)
+theme_override_font_sizes/font_size = 28
+text = "Merged Shader"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shaderwindow" type="ColorRect" parent="HBoxContainer/VBoxContainer2/shaderM"]
+material = SubResource("ShaderMaterial_v5isj")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2/shaderM"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_rw3mi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ikaxc")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/shader1/Button" to="HBoxContainer/VBoxContainer/shader1/Button" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/shader2/Button" to="HBoxContainer/VBoxContainer/shader2/Button" method="_on_pressed"]
