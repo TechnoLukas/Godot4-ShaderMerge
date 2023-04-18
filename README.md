@@ -1,2 +1,5 @@
-# Godot4ShaderMerge
- demo of godot shader merge
+# Godot4ShaderMerge [development]
+
+ Demo showcase godot shader merging.
+
+![](images/day1.png)
