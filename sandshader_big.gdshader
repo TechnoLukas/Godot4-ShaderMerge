@@ -1,13 +1,9 @@
-//ported from https://www.shadertoy.com/view/ltcGDl
-// with mainly 
-shader_type canvas_item;
-uniform vec2 iMouse;
-//uniform sampler2D iChannel0;
+//originally https://www.shadertoy.com/view/ltcGDl
+// with mainly https://github.com/jayaarrgh/shadertoy2godot and hand fixing
 //thank for https://www.shadertoy.com/view/MdX3Rr by iq
 
-
-//const float PI = 3.14159265359;
-
+shader_type canvas_item;
+uniform vec2 iMouse;
 
 
 vec2 hash( vec2 p )

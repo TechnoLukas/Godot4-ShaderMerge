@@ -1,3 +1,6 @@
+//originally https://www.shadertoy.com/view/ldSBRc
+// with mainly https://github.com/jayaarrgh/shadertoy2godot and hand fixing
+
 shader_type canvas_item;
 float getBox(vec2 st, float left, float bottom, float width, float height) {
     float sm = 0.002;
