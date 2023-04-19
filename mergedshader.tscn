@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://db82bkr8u0ro5"]
+[gd_scene load_steps=6 format=3 uid="uid://ygwi1uv3dr6u"]
 
-[ext_resource type="Shader" path="res://sandshader_big.gdshader" id="1_73ydx"]
-[ext_resource type="Script" path="res://changescene.gd" id="1_upoa4"]
-[ext_resource type="Script" path="res://mouseget.gd" id="2_ju6ob"]
+[ext_resource type="Script" path="res://changescene.gd" id="1_55obg"]
+[ext_resource type="Shader" path="res://mergedshader_big.gdshader" id="2_x1p08"]
+[ext_resource type="Script" path="res://mouseget.gd" id="3_a7stc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xt3kv"]
 bg_color = Color(0.564706, 0.0588235, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bbqp8"]
-shader = ExtResource("1_73ydx")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ukfs3"]
+shader = ExtResource("2_x1p08")
 shader_parameter/iMouse = null
 
 [node name="sandshader" type="Control"]
@@ -34,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.141176, 0.141176, 0.141176, 1)
 theme_override_font_sizes/font_size = 28
-text = "Desert shader"
+text = "Merged shader"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -45,11 +45,11 @@ offset_top = 7.0
 offset_right = 1145.0
 offset_bottom = 33.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_xt3kv")
-script = ExtResource("1_upoa4")
+script = ExtResource("1_55obg")
 scene = "res://main.tscn"
 
 [node name="shaderwindow" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_bbqp8")
+material = SubResource("ShaderMaterial_ukfs3")
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -59,6 +59,6 @@ offset_top = -608.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0, 0, 0, 1)
-script = ExtResource("2_ju6ob")
+script = ExtResource("3_a7stc")
 
 [connection signal="pressed" from="labelbg/ColorRect" to="labelbg/ColorRect" method="_on_pressed"]

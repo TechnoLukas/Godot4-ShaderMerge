@@ -136,9 +136,7 @@ vec3 render( in vec3 ro, in vec3 rd )
 void fragment() {
 
     float time = TIME * 0.5;
-    //float yaw = time;//iMouse.x * 0.05;
-    //float pitch = 1.2;//clamp(iMouse.y * 2.0 /(1.0/SCREEN_PIXEL_SIZE).y,-PI * 0.5,PI * 0.5);
-    
+
     float yaw;
     float pitch;
     
@@ -150,15 +148,6 @@ void fragment() {
         yaw = iMouse.x * 0.05;
     	pitch = clamp(iMouse.y  * 2.0 /(1.0/SCREEN_PIXEL_SIZE).y,-PI * 0.5,PI * 0.5);
     }
-    
-	
-	//vec2 newFC = FRAGCOORD.xy;//screen orientation workaround
-    //newFC.y = (1.0/SCREEN_PIXEL_SIZE).y - FRAGCOORD.xy.y;
-	
-    //vec2 p0 = newFC.xy.xy / (1.0/SCREEN_PIXEL_SIZE).xy;
-	
-	
-    //p0.x *= (1.0/SCREEN_PIXEL_SIZE).x/(1.0/SCREEN_PIXEL_SIZE).y;
 	
 	vec2 uv = UV;
 	uv.y=0.5-uv.y;
