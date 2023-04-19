@@ -1,7 +1,7 @@
-# Godot4ShaderMerge [development]
+# Godot4ShaderMerge
 
 The idea is from my shadertoy project. https://www.shadertoy.com/view/DdKSWd
 
 Demo showcase godot shader merging.
 
-![](images/day1.png)
+![](images/day2.gif)
